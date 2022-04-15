@@ -16,6 +16,11 @@
     <script src="assets/script/tailwind-config.js"></script>
 
     <style type="text/tailwindcss">
+        .flex::before,
+        .flex::after {
+            display: none !important;
+        }
+
         @layer components{
             .side-link{
                 @apply flex items-center font-normal text-black text-sm w-full mb-5 gap-3 transition-all;
@@ -126,15 +131,12 @@
 
         <!-- START: Content -->
         <div class="ml-[300px]">
-            <div class="py-[70px] flex flex-col gap-[50px]">
-                <!-- Navbar -->
+            <div class="py-10 flex flex-col gap-[50px]">
+                <!-- Topbar -->
                 <div class="flex justify-between items-center pr-[50px]">
-                    <div class="flex flex-col gap-[10px]">
-                        <div class="font-bold text-[32px] text-black">
-                            Watch Today
-                        </div>
-                        <p class="mb-0 text-gray-300 text-base">Our selected movies for your mood</p>
-                    </div>
+                    <input type="text"
+                        class="rounded-full border border-gray-2 placeholder:text-gray-1 text-base text-gray-1 px-5 py-[11px] w-full max-w-[570px] focus:outline-none focus:ring-2 transition-all"
+                        placeholder="Search movie, cast, genre" />
                     <div class="flex items-center gap-4">
                         <span class="text-black text-sm font-medium">Welcome, Granola Sky</span>
                         <!-- user avatar -->
@@ -154,59 +156,107 @@
                         </div>
                     </div>
                 </div>
-                <!-- /Navbar -->
+                <!-- /Topbar -->
 
                 <!-- Featured -->
                 <div>
-                    <div class="font-semibold text-[22px] text-black mb-[18px]">Featured Movies</div>
-                    <div class="grid grid-cols-2 gap-5 xl:gap-12">
-                        <div class="col-span-1 relative overflow-hidden group">
-                            <img src="assets/images/featured-1.png" class="object-cover rounded-[30px]" alt="">
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] z-10 translate-y-0 group-hover:translate-y-[300px] transition ease-in-out duration-500 group-hover:bg-transparent">
-                                <div class="px-7 pb-7">
-                                    <div class="font-medium text-xl text-white">Avatar New Era</div>
-                                    <p class="mb-0 text-gray-300 text-base mt-[10px]">2022</p>
+                    <div class="font-semibold text-[22px] text-black mb-4">Featured Movies</div>
+                    <div class="gap-[30px] __scroll-selector">
+
+                        <!-- Movie Thumbnail -->
+                        <div class="relative overflow-hidden group mr-[30px]">
+                            <img src="assets/images/featured-1.png"
+                                class="object-cover rounded-[30px] w-[520px] h-[340px]" alt="" />
+                            <!-- rating -->
+                            <div class="rating absolute top-0 left-0">
+                                <div class="p-[30px] flex items-center gap-1">
+                                    <img src="assets/icons/ic_star.svg" alt="">
+                                    <span class="text-sm font-medium text-white mt-1">4.5/5.0</span>
                                 </div>
                             </div>
-                            <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
-                                -translate-x-1/2 z-20 transition ease-in-out duration-500">
-                                <img src="assets/images/ic_play.svg" class="" width="80" alt="">
+                            <!-- bottom detail -->
+                            <div class="absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]
+                                rounded-br-[28px] flex justify-between items-center px-7 h-[130px]">
+                                <div>
+                                    <div class="font-medium text-[22px] text-white">The Batman in Love</div>
+                                    <p class="mb-0 text-white text-sm font-light">Action • Horror</p>
+                                </div>
+                                <div
+                                    class="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
+                                    <img src="assets/icons/ic_play.svg" width="50" alt="">
+                                </div>
                             </div>
-                            <a href="watching.html" class="inset-0 absolute z-50"></a>
+                            <a href="#!" class="inset-0 absolute z-50"></a>
                         </div>
-                        <div class="col-span-1 relative overflow-hidden group">
-                            <img src="assets/images/featured-2.png" class="object-cover rounded-[30px]" alt="">
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] z-10 translate-y-0 group-hover:translate-y-[300px] transition ease-in-out duration-500 group-hover:bg-transparent">
-                                <div class="px-7 pb-7">
-                                    <div class="font-medium text-xl text-white">Death on the Nile</div>
-                                    <p class="mb-0 text-gray-300 text-base mt-[10px]">2022</p>
+
+                        <!-- Movie Thumbnail -->
+                        <div class="relative overflow-hidden group mr-[30px]">
+                            <img src="assets/images/featured-2.png"
+                                class="object-cover rounded-[30px] w-[520px] h-[340px]" alt="" />
+                            <!-- rating -->
+                            <div class="rating absolute top-0 left-0">
+                                <div class="p-[30px] flex items-center gap-1">
+                                    <img src="assets/icons/ic_star.svg" alt="">
+                                    <span class="text-sm font-medium text-white mt-1">4.2/5.0</span>
                                 </div>
                             </div>
-                            <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
-                                -translate-x-1/2 z-20 transition ease-in-out duration-500">
-                                <img src="assets/images/ic_play.svg" class="" width="80" alt="">
+                            <!-- bottom detail -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]
+                                rounded-br-[28px] flex justify-between items-center px-7 h-[130px]">
+                                <div>
+                                    <div class="font-medium text-[22px] text-white">Despicable Me 2</div>
+                                    <p class="mb-0 text-white text-sm font-light">Action • Adventure</p>
+                                </div>
+                                <div
+                                    class="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
+                                    <img src="assets/icons/ic_play.svg" width="50" alt="">
+                                </div>
                             </div>
-                            <a href="watching.html" class="inset-0 absolute z-50"></a>
+                            <a href="#!" class="inset-0 absolute z-50"></a>
+                        </div>
+
+                        <!-- Movie Thumbnail -->
+                        <div class="relative overflow-hidden group mr-[30px]">
+                            <img src="assets/images/featured-3.png"
+                                class="object-cover rounded-[30px] w-[520px] h-[340px]" alt="" />
+                            <!-- rating -->
+                            <div class="rating absolute top-0 left-0">
+                                <div class="p-[30px] flex items-center gap-1">
+                                    <img src="assets/icons/ic_star.svg" alt="">
+                                    <span class="text-sm font-medium text-white mt-1">4.9/5.0</span>
+                                </div>
+                            </div>
+                            <!-- bottom detail -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]
+                                rounded-br-[28px] flex justify-between items-center px-7 h-[130px]">
+                                <div>
+                                    <div class="font-medium text-[22px] text-white">Train Dragons II</div>
+                                    <p class="mb-0 text-white text-sm font-light">Love • Adventure</p>
+                                </div>
+                                <div
+                                    class="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
+                                    <img src="assets/icons/ic_play.svg" width="50" alt="">
+                                </div>
+                            </div>
+                            <a href="#!" class="inset-0 absolute z-50"></a>
                         </div>
                     </div>
                 </div>
                 <!-- /Featured -->
 
-                <!-- Continue Watching -->
+                <!-- Browse -->
                 <div>
-                    <div class="font-semibold text-[22px] text-black mb-[18px]">Browse</div>
-                    <div class="watched-movies">
+                    <div class="font-semibold text-[22px] text-black mb-4">Browse</div>
+                    <div class="__scroll-selector">
                         <!-- Movies 1 -->
                         <div class="relative group overflow-hidden mr-[30px]">
                             <img src="assets/images/browse-1.png"
                                 class="object-cover rounded-[30px] h-[340px] w-[250px]" alt="">
                             <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] z-10 translate-y-0 group-hover:translate-y-[300px] transition ease-in-out duration-500 group-hover:bg-transparent overflow-hidden">
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
                                 <div class="px-7 pb-7">
-                                    <div class="font-medium text-xl text-white">Uncharted</div>
-                                    <p class="mb-0 text-gray-300 text-base mt-[10px]">2022</p>
+                                    <div class="font-medium text-xl text-white">Meong Golden</div>
+                                    <p class="mb-0 text-gray-300 text-base mt-[10px]">Horror • Love</p>
                                 </div>
                             </div>
                             <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
@@ -220,7 +270,7 @@
                             <img src="assets/images/browse-2.png"
                                 class="object-cover rounded-[30px] h-[340px] w-[250px]" alt="">
                             <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] z-10 translate-y-0 group-hover:translate-y-[300px] transition ease-in-out duration-500 group-hover:bg-transparent overflow-hidden">
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
                                 <div class="px-7 pb-7">
                                     <div class="font-medium text-xl text-white">Strange</div>
                                     <p class="mb-0 text-gray-300 text-base mt-[10px]">2022</p>
@@ -228,7 +278,7 @@
                             </div>
                             <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
                                 -translate-x-1/2 z-20 transition ease-in-out duration-500">
-                                <img src="assets/images/ic_play.svg" class="" width="80" alt="">
+                                <img src="assets/icons/ic_play.svg" width="50" alt="">
                             </div>
                             <a href="#!" class="inset-0 absolute z-50"></a>
                         </div>
@@ -237,7 +287,7 @@
                             <img src="assets/images/browse-3.png"
                                 class="object-cover rounded-[30px] h-[340px] w-[250px]" alt="">
                             <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] z-10 translate-y-0 group-hover:translate-y-[300px] transition ease-in-out duration-500 group-hover:bg-transparent overflow-hidden">
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
                                 <div class="px-7 pb-7">
                                     <div class="font-medium text-xl text-white">Fornite</div>
                                     <p class="mb-0 text-gray-300 text-base mt-[10px]">2022</p>
@@ -245,7 +295,7 @@
                             </div>
                             <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
                                 -translate-x-1/2 z-20 transition ease-in-out duration-500">
-                                <img src="assets/images/ic_play.svg" class="" width="80" alt="">
+                                <img src="assets/icons/ic_play.svg" width="50" alt="">
                             </div>
                             <a href="#!" class="inset-0 absolute z-50"></a>
                         </div>
@@ -254,7 +304,7 @@
                             <img src="assets/images/browse-4.png"
                                 class="object-cover rounded-[30px] h-[340px] w-[250px]" alt="">
                             <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] z-10 translate-y-0 group-hover:translate-y-[300px] transition ease-in-out duration-500 group-hover:bg-transparent overflow-hidden">
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
                                 <div class="px-7 pb-7">
                                     <div class="font-medium text-xl text-white">King's Queen</div>
                                     <p class="mb-0 text-gray-300 text-base mt-[10px]">2022</p>
@@ -262,7 +312,7 @@
                             </div>
                             <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
                                 -translate-x-1/2 z-20 transition ease-in-out duration-500">
-                                <img src="assets/images/ic_play.svg" class="" width="80" alt="">
+                                <img src="assets/icons/ic_play.svg" width="50" alt="">
                             </div>
                             <a href="#!" class="inset-0 absolute z-50"></a>
                         </div>
@@ -271,7 +321,7 @@
                             <img src="assets/images/browse-5.png"
                                 class="object-cover rounded-[30px] h-[340px] w-[250px]" alt="">
                             <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] z-10 translate-y-0 group-hover:translate-y-[300px] transition ease-in-out duration-500 group-hover:bg-transparent overflow-hidden">
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
                                 <div class="px-7 pb-7">
                                     <div class="font-medium text-xl text-white">Morbius</div>
                                     <p class="mb-0 text-gray-300 text-base mt-[10px]">2022</p>
@@ -279,7 +329,7 @@
                             </div>
                             <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
                                 -translate-x-1/2 z-20 transition ease-in-out duration-500">
-                                <img src="assets/images/ic_play.svg" class="" width="80" alt="">
+                                <img src="assets/icons/ic_play.svg" width="50" alt="">
                             </div>
                             <a href="#!" class="inset-0 absolute z-50"></a>
                         </div>
@@ -305,7 +355,7 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.watched-movies').removeClass('hidden').flickity({
+            $('.__scroll-selector').removeClass('hidden').flickity({
                 // options
                 "cellAlign": "left",
                 "contain": true,
