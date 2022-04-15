@@ -21,6 +21,12 @@
             display: none !important;
         }
 
+        .top-search{
+            background-repeat: no-repeat;
+            background-size: 24px;
+            background-position: calc(100% - 20px) center;
+        }
+
         @layer components{
             .side-link{
                 @apply flex items-center font-normal text-black text-sm w-full mb-5 gap-3 transition-all;
@@ -35,6 +41,12 @@
 
             .side-link.active svg{
                 @apply text-alerange;
+            }
+
+            input.top-search{
+                @apply rounded-full border border-gray-2 placeholder:text-gray-1 text-base text-gray-1 px-5 py-[11px]
+                w-full max-w-[570px] focus:outline-none focus:ring-2 transition-all bg-no-repeat bg-center
+                bg-[center_right_20px];
             }
         }
     </style>
@@ -134,9 +146,8 @@
             <div class="py-10 flex flex-col gap-[50px]">
                 <!-- Topbar -->
                 <div class="flex justify-between items-center pr-[50px]">
-                    <input type="text"
-                        class="rounded-full border border-gray-2 placeholder:text-gray-1 text-base text-gray-1 px-5 py-[11px] w-full max-w-[570px] focus:outline-none focus:ring-2 transition-all"
-                        placeholder="Search movie, cast, genre" />
+                    <input type="text" class="top-search" placeholder="Search movie, cast, genre"
+                        style="background-image: url('assets/icons/ic_search.svg');" />
                     <div class="flex items-center gap-4">
                         <span class="text-black text-sm font-medium">Welcome, Granola Sky</span>
                         <!-- user avatar -->
@@ -149,7 +160,7 @@
                             </a>
                             <div class="bg-white rounded-2xl text-stream-dark font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden"
                                 id="dropdown-target">
-                                <a href="#!" class="transition-all hover:bg-sky-100 p-4">Watch</a>
+                                <a href="#!" class="transition-all hover:bg-sky-100 p-4">Dashboard</a>
                                 <a href="#!" class="transition-all hover:bg-sky-100 p-4">Settings</a>
                                 <a href="sign_in.html" class="transition-all hover:bg-sky-100 p-4">Sign Out</a>
                             </div>
@@ -342,7 +353,7 @@
         <!-- END: Content -->
     </div>
 
-    <div class="mx-auto px-4 w-full md:w-7/12 h-screen block lg:hidden flex">
+    <div class="mx-auto px-4 w-full h-screen lg:hidden flex bg-black">
         <div class="text-white text-2xl text-center leading-snug font-medium my-auto">
             Sorry, this page only supported on 1024px screen or above
         </div>
