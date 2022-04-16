@@ -57,7 +57,7 @@
                 </a>
                 <div class="links flex flex-col mt-[60px]">
                     <div class="text-gray-1 text-sm mb-3">Menu</div>
-                    <a href="#!" class="side-link active">
+                    <a href="/" class="side-link active">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <g id="Iconly/Bulk/Home">
@@ -95,7 +95,7 @@
                     </a>
 
                     <div class="text-gray-1 side-link mb-3 mt-[34px]">Others</div>
-                    <a href="!#" class="side-link">
+                    <a href="pricing.html" class="side-link">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -110,7 +110,6 @@
                                 d="M7.33037 2.0004H16.6694C20.0704 2.0004 21.9904 3.9294 22.0004 7.3304V16.6704C22.0004 20.0704 20.0704 22.0004 16.6694 22.0004H7.33037C3.92937 22.0004 2.00037 20.0704 2.00037 16.6704V7.3304C2.00037 3.9294 3.92937 2.0004 7.33037 2.0004ZM12.0494 17.8604C12.4804 17.8604 12.8394 17.5404 12.8794 17.1104V6.9204C12.9194 6.6104 12.7704 6.2994 12.5004 6.1304C12.2194 5.9604 11.8794 5.9604 11.6104 6.1304C11.3394 6.2994 11.1904 6.6104 11.2194 6.9204V17.1104C11.2704 17.5404 11.6294 17.8604 12.0494 17.8604ZM16.6504 17.8604C17.0704 17.8604 17.4294 17.5404 17.4804 17.1104V13.8304C17.5094 13.5094 17.3604 13.2104 17.0894 13.0404C16.8204 12.8704 16.4804 12.8704 16.2004 13.0404C15.9294 13.2104 15.7804 13.5094 15.8204 13.8304V17.1104C15.8604 17.5404 16.2194 17.8604 16.6504 17.8604ZM8.21937 17.1104C8.17937 17.5404 7.82037 17.8604 7.38937 17.8604C6.95937 17.8604 6.59937 17.5404 6.56037 17.1104V10.2004C6.53037 9.8894 6.67937 9.5804 6.95037 9.4104C7.21937 9.2404 7.56037 9.2404 7.83037 9.4104C8.09937 9.5804 8.25037 9.8894 8.21937 10.2004V17.1104Z"
                                 fill="#B7B7B7" />
                         </svg>
-
                         Analytics
                     </a>
                     <a href="!#" class="side-link">
@@ -121,7 +120,7 @@
                         </svg>
                         Your Profile
                     </a>
-                    <a href="!#" class="side-link mb-0">
+                    <a href="sign_in.html" class="side-link mb-0">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -136,7 +135,7 @@
         <!-- END: Sidebar -->
 
         <!-- START: Content -->
-        <div class="ml-[300px]">
+        <div class="ml-[250px] px-[50px]">
             <div class="py-10 flex flex-col gap-[50px]">
                 <!-- Topbar -->
                 <div class="flex justify-between items-center pr-[50px]">
@@ -149,10 +148,9 @@
                             <a href="#!"
                                 class="outline outline-2 outline-gray-2 p-[5px] rounded-full w-[60px] dropdown-button"
                                 data-target="#dropdown-button">
-                                <img src="assets/images/avatar.png" class="rounded-full object-cover w-full"
-                                    alt="stream" />
+                                <img src="assets/images/avatar.png" class="rounded-full object-cover w-full" alt="" />
                             </a>
-                            <div class="bg-white rounded-2xl text-stream-dark font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden"
+                            <div class="bg-white rounded-2xl text-black font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden"
                                 id="dropdown-target">
                                 <a href="#!" class="transition-all hover:bg-sky-100 p-4">Dashboard</a>
                                 <a href="#!" class="transition-all hover:bg-sky-100 p-4">Settings</a>
@@ -237,6 +235,32 @@
                                 <div>
                                     <div class="font-medium text-[22px] text-white">Train Dragons II</div>
                                     <p class="mb-0 text-white text-sm font-light">Love • Adventure</p>
+                                </div>
+                                <div
+                                    class="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
+                                    <img src="assets/icons/ic_play.svg" width="50" alt="">
+                                </div>
+                            </div>
+                            <a href="#!" class="inset-0 absolute z-50"></a>
+                        </div>
+
+                        <!-- Movie Thumbnail -->
+                        <div class="relative overflow-hidden group mr-[30px]">
+                            <img src="assets/images/featured-1.png"
+                                class="object-cover rounded-[30px] w-[520px] h-[340px]" alt="" />
+                            <!-- rating -->
+                            <div class="rating absolute top-0 left-0">
+                                <div class="p-[30px] flex items-center gap-1">
+                                    <img src="assets/icons/ic_star.svg" alt="">
+                                    <span class="text-sm font-medium text-white mt-1">4.5/5.0</span>
+                                </div>
+                            </div>
+                            <!-- bottom detail -->
+                            <div class="absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]
+                                rounded-br-[28px] flex justify-between items-center px-7 h-[130px]">
+                                <div>
+                                    <div class="font-medium text-[22px] text-white">The Batman in Love</div>
+                                    <p class="mb-0 text-white text-sm font-light">Action • Horror</p>
                                 </div>
                                 <div
                                     class="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
@@ -335,6 +359,23 @@
                             <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
                                 -translate-x-1/2 z-20 transition ease-in-out duration-500">
                                 <img src="assets/icons/ic_play.svg" width="50" alt="">
+                            </div>
+                            <a href="#!" class="inset-0 absolute z-50"></a>
+                        </div>
+                        <!-- Movies 6 -->
+                        <div class="relative group overflow-hidden mr-[30px]">
+                            <img src="assets/images/browse-1.png"
+                                class="object-cover rounded-[30px] h-[340px] w-[250px]" alt="">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
+                                <div class="px-7 pb-7">
+                                    <div class="font-medium text-xl text-white">Meong Golden</div>
+                                    <p class="mb-0 text-gray-300 text-base mt-[10px]">Horror • Love</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
+                                -translate-x-1/2 z-20 transition ease-in-out duration-500">
+                                <img src="assets/icons/ic_play.svg" class="" width="50" alt="">
                             </div>
                             <a href="#!" class="inset-0 absolute z-50"></a>
                         </div>
