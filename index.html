@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stream</title>
+    <title>Moonton</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
@@ -19,12 +19,6 @@
         .flex::before,
         .flex::after {
             display: none !important;
-        }
-
-        .top-search{
-            background-repeat: no-repeat;
-            background-size: 24px;
-            background-position: calc(100% - 20px) center;
         }
 
         @layer components{
@@ -367,7 +361,6 @@
     <script>
         $(document).ready(function () {
             $('.__scroll-selector').removeClass('hidden').flickity({
-                // options
                 "cellAlign": "left",
                 "contain": true,
                 "groupCells": 1,
