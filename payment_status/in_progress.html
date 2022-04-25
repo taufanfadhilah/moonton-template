@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonton</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+    </style>
+
+    <script src="../assets/script/tailwind-config.js"></script>
+
+    <style type="text/tailwindcss">
+        .flex::before,
+        .flex::after {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+    <!-- Desktop Only -->
+    <div class="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
+        <div class="fixed top-[-50px] hidden lg:block">
+            <img src="../assets/images/signup-image.png"
+                class="hidden laptopLg:block laptopLg:max-w-[450px] laptopXl:max-w-[640px]" alt="">
+        </div>
+        <div class="py-24 flex justify-center lg:justify-end lg:pr-[250px]">
+            <div class="w-[300px]">
+                <img src="../assets/images/moonton-white.svg" class="mb-[200px]" alt="">
+                <div class="mb-[50px]">
+                    <div class="font-semibold text-[26px] mb-3">
+                        Payment in Progress.
+                    </div>
+                    <p class="text-base text-[#767676] leading-7">
+                        Please wait until the payment is success
+                        and explore our great movies.
+                    </p>
+                </div>
+                <div class="grid gap-[14px]">
+                    <a href="../dashboard-basic.html" class="rounded-2xl bg-alerange py-[13px] text-center">
+                        <span class="text-base font-semibold">
+                            My Dashboard
+                        </span>
+                    </a>
+                    <a href="#!" class="rounded-2xl border border-white py-[13px] text-center">
+                        <span class="text-base text-white">
+                            Contact Support
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
